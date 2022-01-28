@@ -1,8 +1,7 @@
-//import { StatusBar } from 'expo-status-bar';
 import React, { useState, useRef } from 'react';
 import { StyleSheet, Text, View, Button, TextInput } from 'react-native';
 
- {/*Kommenttikenttä*/}
+
 
 export default function App() {
   const [result, setResult] = useState('');
@@ -30,8 +29,8 @@ export default function App() {
 
 
   return (
-    <View style={styles.container}>                           {/*Ei ole määritelty suuntaa joten kaikki menee pystyyn*/}
-      <Text>Result: {result} </Text>                          {/*Result: normi tekstinä, vastaus objektina*/}
+    <View style={styles.container}>                           
+      <Text>Result: {result} </Text>                          
 
       <TextInput style={styles.input} ref={initialFocus}      
         keyboardType='number-pad'
@@ -45,13 +44,13 @@ export default function App() {
         value={operand2}>
       </TextInput>
 
-      <View style={styles.operators}>                         {/*Button on vähän köyhä komponentti, joten erikseen view komponentti jolle määritellään flexdirection row eli tämän sisällä juoksee vasemmalta oikealle*/}
+      <View style={styles.operators}>                         
 
-        <View style={styles.buttons}>                         {/*Ensimmäinen nappi*/}
+        <View style={styles.buttons}>                         
           <Button title='+' onPress={() => calculate('+')}> </Button>
         </View>
 
-        <View style={styles.buttons}>                         {/*Toinen nappi*/}
+        <View style={styles.buttons}>                         
           <Button title='-' onPress={() => calculate('-')}> </Button>
         </View>
 
@@ -63,10 +62,10 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {                              //expo init pohjasta joten sen tyylit
-    flex: 1,                                //Tarkoittaa sitä että täyttää kaiken sille käytössä olevan tilan
+  container: {                              
+    flex: 1,                                
     backgroundColor: '#fff',
-    alignItems: 'center',                   //Kaikki pakataan keskelle sekä pysty että vaakasuunnassa, se on niinku lähtökohtana
+    alignItems: 'center',                   
     justifyContent: 'center',
   },
   input : {
@@ -76,7 +75,7 @@ const styles = StyleSheet.create({
     margin: 5,
     width: '50%'
   },
-  operators: {                              //Tällä saadaan napit vaakasuuntaan
+  operators: {                              
     width: '50%',
     flexDirection: 'row',
     justifyContent: 'space-evenly'
